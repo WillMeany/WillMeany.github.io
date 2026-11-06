@@ -1,85 +1,75 @@
-:root {
-  --paper: #f4f6f8;
-  --ink: #16202e;
-  --muted: #5a6677;
-  --accent: #2a5a8c;
-  --rule: #cfd6df;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #131a24;
-    --ink: #e8edf3;
-    --muted: #9aa6b6;
-    --accent: #7fb0e3;
-    --rule: #2c3846;
-  }
-}
-* { box-sizing: border-box; }
-html { font-size: 18px; }
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.6;
-}
-a { color: var(--accent); }
-a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Your Name</title>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Your Name</h1>
+      <p class="education">
+        <strong>B.S. in Engineering, expected May 2028</strong>
+        Your University
+      </p>
+    </header>
 
-.page { max-width: 62rem; margin: 0 auto; padding: 5rem 1.25rem 4rem; }
-header { text-align: center; margin-bottom: 3rem; }
-h1 {
-  font-family: "Newsreader", Georgia, "Times New Roman", serif;
-  font-weight: 500;
-  font-size: clamp(2.6rem, 9vw, 5rem);
-  line-height: 1.1;
-  margin: 0 0 1rem;
-}
-.education { margin: 0; color: var(--muted); }
-.education strong { display: block; color: var(--ink); font-weight: 500; }
+    <!-- Pictures and short description -->
+    <section class="intro">
+      <div class="photos">
+        <!-- To use a real picture, replace a placeholder div with:
+             <img class="photo" src="images/photo1.jpg" alt="Describe the picture"> -->
+        <div class="photo">Picture 1</div>
+        <div class="photo">Picture 2</div>
+      </div>
+      <div>
+        <p>Write a short description here about who you are, what you study, and what you like to build.</p>
+        <p>A second sentence or two can cover what you're looking for next, such as internships or research.</p>
+      </div>
+    </section>
 
-main {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  align-items: start;
-}
-@media (max-width: 760px) { main { grid-template-columns: 1fr; } }
-details {
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  padding: 0 1.25rem;
-  background: color-mix(in srgb, var(--paper) 92%, var(--ink) 8%);
-}
-details[open] { border-color: var(--accent); }
-summary {
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-summary::-webkit-details-marker { display: none; }
-summary::after {
-  content: "";
-  width: 0.55rem;
-  height: 0.55rem;
-  border-right: 2px solid var(--accent);
-  border-bottom: 2px solid var(--accent);
-  transform: rotate(45deg);
-  transition: transform 0.2s;
-  margin-right: 0.25rem;
-}
-details[open] summary::after { transform: rotate(-135deg); }
-@media (prefers-reduced-motion: reduce) { summary::after { transition: none; } }
-.content { padding: 0 0 1.5rem; }
-.content p { margin: 0 0 1rem; }
+    <main>
+      <details>
+        <summary>Work experience</summary>
+        <div class="content">
+          <p>Write a paragraph here about your work experience: where you worked, what you did, and what came out of it.</p>
+          <div class="work-photos">
+            <div class="photo">Picture</div>
+            <div class="photo">Picture</div>
+            <div class="photo">Picture</div>
+          </div>
+        </div>
+      </details>
 
-.entry { padding: 1rem 0; border-top: 1px solid var(--rule); }
-.entry:first-child { border-top: 0; padding-top: 0; }
-.entry h3 { font-size: 1.05rem; margin: 0; font-weight: 600; }
-.entry .when { color: var(--muted); font-size: 0.9rem; margin: 0.15rem 0 0.5rem; }
-.entry p { margin: 0.4rem 0; }
+      <details>
+        <summary>Reports</summary>
+        <div class="content">
+          <article class="report">
+            <h3>Report title</h3>
+            <p class="when">Course or context, Month Year</p>
+            <p>A two-sentence summary of the question you looked at and what you found.</p>
+            <p><a href="reports/report1.pdf" download>Download the PDF</a></p>
+          </article>
+          <article class="report">
+            <h3>Report title</h3>
+            <p class="when">Course or context, Month Year</p>
+            <p>A two-sentence summary of the question you looked at and what you found.</p>
+            <p><a href="reports/report2.pdf" download>Download the PDF</a></p>
+          </article>
+        </div>
+      </details>
+    </main>
+
+    <footer>
+      <h2>Contact</h2>
+      <p><a href="mailto:you@example.com">you@example.com</a></p>
+      <p><a href="https://www.linkedin.com/in/yourname">LinkedIn</a></p>
+    </footer>
+  </div>
+</body>
+</html>
