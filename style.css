@@ -1,0 +1,85 @@
+:root {
+  --paper: #f4f6f8;
+  --ink: #16202e;
+  --muted: #5a6677;
+  --accent: #2a5a8c;
+  --rule: #cfd6df;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #131a24;
+    --ink: #e8edf3;
+    --muted: #9aa6b6;
+    --accent: #7fb0e3;
+    --rule: #2c3846;
+  }
+}
+* { box-sizing: border-box; }
+html { font-size: 18px; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+a { color: var(--accent); }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+.page { max-width: 62rem; margin: 0 auto; padding: 5rem 1.25rem 4rem; }
+header { text-align: center; margin-bottom: 3rem; }
+h1 {
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  font-size: clamp(2.6rem, 9vw, 5rem);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+.education { margin: 0; color: var(--muted); }
+.education strong { display: block; color: var(--ink); font-weight: 500; }
+
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+@media (max-width: 760px) { main { grid-template-columns: 1fr; } }
+details {
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 0 1.25rem;
+  background: color-mix(in srgb, var(--paper) 92%, var(--ink) 8%);
+}
+details[open] { border-color: var(--accent); }
+summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+  margin-right: 0.25rem;
+}
+details[open] summary::after { transform: rotate(-135deg); }
+@media (prefers-reduced-motion: reduce) { summary::after { transition: none; } }
+.content { padding: 0 0 1.5rem; }
+.content p { margin: 0 0 1rem; }
+
+.entry { padding: 1rem 0; border-top: 1px solid var(--rule); }
+.entry:first-child { border-top: 0; padding-top: 0; }
+.entry h3 { font-size: 1.05rem; margin: 0; font-weight: 600; }
+.entry .when { color: var(--muted); font-size: 0.9rem; margin: 0.15rem 0 0.5rem; }
+.entry p { margin: 0.4rem 0; }
