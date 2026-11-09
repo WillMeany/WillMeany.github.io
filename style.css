@@ -105,11 +105,19 @@ details[open] summary::after { transform: rotate(-135deg); }
 .work-photos .photo { aspect-ratio: 4 / 3; }
 
 /* Reports */
-.report { padding: 1rem 0; border-top: 1px solid var(--rule); }
-.report:first-child { border-top: 0; padding-top: 0; }
-.report h3 { font-size: 1.05rem; margin: 0; font-weight: 600; }
-.report .when { color: var(--muted); font-size: 0.9rem; margin: 0.15rem 0 0.5rem; }
-.report p { margin: 0.4rem 0; }
+.hint { color: var(--muted); font-size: 0.9rem; }
+details.report {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 0 1rem;
+  margin-bottom: 0.75rem;
+}
+details.report summary { font-size: 1.05rem; font-weight: 600; padding: 0.85rem 0; }
+details.report .when { color: var(--muted); font-size: 0.9rem; margin: 0 0 0.5rem; }
+details.report p { margin: 0 0 0.75rem; }
+.pdf { width: 100%; height: 38rem; max-height: 80vh; border: 1px solid var(--rule); border-radius: 4px; background: #fff; }
+.pdf-links { display: flex; gap: 1.5rem; margin-top: 0.75rem; padding-bottom: 0.25rem; }
 
 /* Contact */
 footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); text-align: center; }

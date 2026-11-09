@@ -12,10 +12,10 @@
 <body>
   <div class="page">
     <header>
-      <h1>William Meany</h1>
+      <h1>Your Name</h1>
       <p class="education">
-        <strong>B.S. in Mechanical Engineering, Minor in Economics <br> Expected graduation in May 2027</strong>
-        Clemson University
+        <strong>B.S. in Engineering, expected May 2028</strong>
+        Your University
       </p>
     </header>
 
@@ -49,18 +49,32 @@
       <details>
         <summary>Reports</summary>
         <div class="content">
-          <article class="report">
-            <h3>Report title</h3>
+          <p class="hint">Click a report's name to preview it here.</p>
+
+          <!-- To add a report: copy one <details class="report"> block, then change
+               the title, summary, and the file name in BOTH places (iframe and link).
+               Upload the PDF to the "reports" folder in your repo. -->
+          <details class="report">
+            <summary>Report title one</summary>
             <p class="when">Course or context, Month Year</p>
             <p>A two-sentence summary of the question you looked at and what you found.</p>
-            <p><a href="reports/report1.pdf" download>Download the PDF</a></p>
-          </article>
-          <article class="report">
-            <h3>Report title</h3>
+            <iframe class="pdf" src="reports/report1.pdf" title="Preview of Report title one" loading="lazy"></iframe>
+            <p class="pdf-links">
+              <a href="reports/report1.pdf" target="_blank" rel="noopener">Open in a new tab</a>
+              <a href="reports/report1.pdf" download>Download</a>
+            </p>
+          </details>
+
+          <details class="report">
+            <summary>Report title two</summary>
             <p class="when">Course or context, Month Year</p>
             <p>A two-sentence summary of the question you looked at and what you found.</p>
-            <p><a href="reports/report2.pdf" download>Download the PDF</a></p>
-          </article>
+            <iframe class="pdf" src="reports/report2.pdf" title="Preview of Report title two" loading="lazy"></iframe>
+            <p class="pdf-links">
+              <a href="reports/report2.pdf" target="_blank" rel="noopener">Open in a new tab</a>
+              <a href="reports/report2.pdf" download>Download</a>
+            </p>
+          </details>
         </div>
       </details>
     </main>
