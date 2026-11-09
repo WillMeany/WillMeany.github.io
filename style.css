@@ -3,7 +3,7 @@
   --panel: #f6f6f6;
   --ink: #1a1a1a;
   --muted: #666666;
-  --accent: #1a1a1a;
+  --accent: #f56600;
   --rule: #dcdcdc;
 }
 @media (prefers-color-scheme: dark) {
